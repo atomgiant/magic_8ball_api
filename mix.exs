@@ -15,8 +15,7 @@ defmodule Magic8ball.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [applications: applications(Mix.env),
-     mod: {Magic8ball, []},
-     env: [cowboy_port: 8080]]
+     mod: {Magic8ball, []}]
   end
 
   defp applications(:dev), do: applications(:all) ++ [:remix]

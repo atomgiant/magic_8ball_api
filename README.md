@@ -26,5 +26,10 @@ See also: https://github.com/atomgiant/magic_8ball_phoenix
 1. Make a call to the API
 
   ```
-  curl 127.0.0.1:8080/api/shake
+  curl localhost:8080/api/shake
   ```
+
+## API specs
+
+* [API V1](API_V1)
+* [API V2](API_V2)

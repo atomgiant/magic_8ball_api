@@ -9,6 +9,7 @@ defmodule Magic8ball.API.V1 do
 
   get "/shake" do
     conn
+    |> put_resp_content_type("text/plain")
     |> send_resp(200, Enum.random(@answers))
   end
 
