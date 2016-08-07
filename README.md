@@ -31,5 +31,5 @@ See also: https://github.com/atomgiant/magic_8ball_phoenix
 
 ## API specs
 
-* [API V1](API_V1)
-* [API V2](API_V2)
+* [API V1](API_V1.md)
+* [API V2](API_V2.md)
