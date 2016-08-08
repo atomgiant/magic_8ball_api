@@ -9,13 +9,13 @@ Shake the Magic8ball.
 **Example request**
 
 ```
-  curl localhost:8080/api/shake
+curl localhost:8080/api/shake
 ```
 
 **Example response**
 
 ```
-  {"answer":"Ask again later"}
+{"answer":"Ask again later"}
 ```
 
 ## GET /answers
@@ -32,13 +32,13 @@ Get the list of answers.
 **Example request**
 
 ```
-  curl -u foo:123 localhost:8080/api/answers
+curl -u foo:123 localhost:8080/api/answers
 ```
 
 **Example response**
 
 ```
-  {"total":20,"page":1,"answers":["It is certain","It is decidedly so","Without a doubt","Yes definitely","You may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes"]}
+{"total":20,"page":1,"answers":["It is certain","It is decidedly so", ...]}
 ```
 
 ## POST /answers
@@ -52,13 +52,14 @@ Add a new answer.
 **Example request**
 
 ```
-  curl -H 'Content-Type: application/json' -X POST -d '{ "answer": "I\u0027ve got a bad feeling about this" }' -u foo:123 localhost:8080/api/answers23 localhost:8080/api/answers
+curl -H 'Content-Type: application/json' -X POST u foo:123 \
+  -d '{ "answer": "I\u0027ve got a bad feeling about this" }' localhost:8080/api/answers
 ```
 
 **Example response**
 
 ```
-{"answers":["It is certain","It is decidedly so","Without a doubt","Yes definitely","You may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Cannot predict now","Concentrate and ask again","Do not count on it","My reply is no","My sources say no","Outlook not so good","Very doubtful","I've got a bad feeling about this"]}
+{"answers":["It is certain",...,"I've got a bad feeling about this"]}
 ```
 
 ## PUT /answers
@@ -73,13 +74,15 @@ Update an answer.
 **Example request**
 
 ```
-  curl -H 'Content-Type: application/json' -X PUT -d '{ "answer": "Very doubtful", "value": "Extremely doubtful" }' -u foo:123 localhost:8080/api/answers 
+curl -H 'Content-Type: application/json' -X PUT -u foo:123 \
+  -d '{ "answer": "Very doubtful", "value": "Extremely doubtful" }' \
+  localhost:8080/api/answers
 ```
 
 **Example response**
 
 ```
-  {"answers":["It is certain","It is decidedly so","Without a doubt","Yes definitely","You may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Cannot predict now","Concentrate and ask again","Do not count on it","My reply is no","My sources say no","Outlook not so good","Extremely doubtful","I've got a bad feeling about this"]}
+  {"answers":["It is certain",...,"Extremely doubtful"]}
 ```
 
 ## DELETE /answers
@@ -93,11 +96,12 @@ Delete an answer.
 **Example request**
 
 ```
-  curl -H 'Content-Type: application/json' -X DELETE -d '{ "answer": "My reply is no" }' -u foo:123 localhost:8080/api/answers
+curl -H 'Content-Type: application/json' -X DELETE -u foo:123 \
+  -d '{ "answer": "My reply is no" }' localhost:8080/api/answers
 ```
 
 **Example response**
 
 ```
-  {"answers":["It is certain","It is decidedly so","Without a doubt","Yes definitely","You may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Cannot predict now","Concentrate and ask again","Do not count on it","My sources say no","Outlook not so good","Extremely doubtful","I've got a bad feeling about this"]}
+{"answers":["It is certain",...,"Outlook not so good"]}
 ```
